@@ -1,2 +1,4 @@
 /raw_merged_dataset.csv
 /final_nifty50_dataset.csv
+*.docx
+*.doc
