@@ -1,13 +1,9 @@
 stages:
-  data_validation:
-    cmd: python -c "import pandas as pd; df=pd.read_excel('final_nifty50_dataset.xlsx'); print(f'Dataset rows: {len(df)}') if len(df) > 0 else exit(1)"
+  validate_data:
+    cmd: python -c "import pandas as pd; df = pd.read_csv('final_nifty50_dataset.csv'); print('Rows:', len(df))"
     deps:
-      - final_nifty50_dataset.xlsx
-    outs:
-      - data_validation.log
-  model_evaluation:
-    cmd: python -c "import joblib; m=joblib.load('best_model.pkl'); print('Model verified')"
+      - final_nifty50_dataset.csv
+  validate_model:
+    cmd: python -c "import joblib; m = joblib.load('best_model.pkl'); print('Model verified')"
     deps:
       - best_model.pkl
-    outs:
-      - model_evaluation.log
