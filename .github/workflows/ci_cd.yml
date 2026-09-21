@@ -28,9 +28,9 @@ jobs:
       - name: Run Flake8 Code Inspection
         run: |
           # Stop the build if there are Python syntax errors or undefined names
-          flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
-          # Exit-zero treats all errors as warnings
-          flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+          flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics --exclude=mlruns,__pycache__,.pytest_cache
+          # Exit-zero treats formatting as warnings
+          flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics --exclude=mlruns,__pycache__,.pytest_cache
 
   unit-and-api-testing:
     name: Model & API Test Suite
@@ -50,11 +50,11 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
-          pip install pytest pytest-cov httpx
+          pip install pytest pytest-cov pytest-asyncio httpx
 
-      - name: Execute Pytest Suite with Coverage
+      - name: Execute Pytest Suite
         run: |
-          pytest tests/ -v --tb=short --cov=app --cov-report=term-missing
+          pytest tests/ -v --tb=short
 
   dvc-data-verification:
     name: Data & Model Version Check
@@ -68,15 +68,16 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
+          cache: "pip"
+
+      - name: Install Model Loading Libraries
+        run: |
+          python -m pip install --upgrade pip
+          pip install scikit-learn joblib
 
       - name: Verify Model Artifact Availability
         run: |
-          python -c "
-          import os, joblib
-          assert os.path.exists('best_model.pkl'), 'Missing production model artifact best_model.pkl'
-          m = joblib.load('best_model.pkl')
-          print(f'Production model verified: {type(m).__name__} with {getattr(m, "n_features_in_", 16)} features')
-          "
+          python -c "import os, joblib; assert os.path.exists('best_model.pkl'), 'Missing model'; m = joblib.load('best_model.pkl'); print('Model verified successfully:', type(m).__name__)"
 
   docker-build:
     name: Container Build & Health Validation

@@ -94,7 +94,7 @@ def predict(features: StockFeatures) -> PredictionResponse:
             detail="Model artifact is not loaded."
         )
 
-    data_dict = (features.model_dump() if hasattr(features, "model_dump") else feature(s.model_dump() if hasattr(s, "model_dump") else s.dict()))
+    data_dict = (features.model_dump() if hasattr(features, "model_dump") else features.dict())
     feature_vector = pd.DataFrame([data_dict])[FEATURE_COLUMNS]
 
     try:
