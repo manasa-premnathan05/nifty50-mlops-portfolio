@@ -94,7 +94,7 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context: .
-          push: false
+          load: true
           tags: nifty50-predictor:ci-${{ github.sha }}
 
       - name: Run Container Smoke Test
