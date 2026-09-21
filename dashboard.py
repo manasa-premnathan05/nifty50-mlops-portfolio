@@ -48,7 +48,7 @@ st.sidebar.markdown("---")
 st.sidebar.markdown("### 👤 Author & Repository")
 st.sidebar.markdown("**Maintainer:** Manasa Premnathan")
 st.sidebar.markdown("🔗 [GitHub Repository](https://github.com/manasa-premnathan05/nifty50-mlops-portfolio)")
-st.sidebar.markdown("🌐 [Streamlit Cloud](https://manasa-premnathan05-nifty50-mlops.streamlit.app)")
+st.sidebar.markdown("🌐 [Streamlit Cloud](https://manasa-premnathan05-nifty50-ads.streamlit.app)")
 st.sidebar.info("**Model:** Decision Tree Classifier\\n**Input Features:** 16 Technical Indicators\\n**Serving Framework:** FastAPI + Docker")
 
 # FEATURE LIST

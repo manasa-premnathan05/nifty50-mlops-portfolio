@@ -27,9 +27,7 @@ jobs:
 
       - name: Run Flake8 Code Inspection
         run: |
-          # Stop the build if there are Python syntax errors or undefined names
           flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics --exclude=mlruns,__pycache__,.pytest_cache
-          # Exit-zero treats formatting as warnings
           flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics --exclude=mlruns,__pycache__,.pytest_cache
 
   unit-and-api-testing:
@@ -53,8 +51,10 @@ jobs:
           pip install pytest pytest-cov pytest-asyncio httpx
 
       - name: Execute Pytest Suite
+        env:
+          PYTHONPATH: .
         run: |
-          pytest tests/ -v --tb=short
+          python -m pytest tests/ -v --tb=short
 
   dvc-data-verification:
     name: Data & Model Version Check

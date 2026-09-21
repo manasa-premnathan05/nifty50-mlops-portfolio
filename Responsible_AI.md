@@ -2,7 +2,7 @@
 ### Quantitative Machine Learning for NIFTY 50 Equity Direction Prediction
 **Author & Maintainer:** Manasa Premnathan  
 **Public Repository:** [https://github.com/manasa-premnathan05/nifty50-mlops-portfolio](https://github.com/manasa-premnathan05/nifty50-mlops-portfolio)  
-**Live Streamlit Application:** [https://manasa-premnathan05-nifty50-mlops.streamlit.app](https://manasa-premnathan05-nifty50-mlops.streamlit.app)  
+**Live Streamlit Application:** [https://manasa-premnathan05-nifty50-ads.streamlit.app](https://manasa-premnathan05-nifty50-ads.streamlit.app)  
 
 ---
 
@@ -76,4 +76,4 @@ As autonomous and semi-autonomous machine learning models become integral to fin
 **Certified By:**  
 **Lead Quantitative Developer:** Manasa Premnathan  
 **Portfolio Link:** [https://github.com/manasa-premnathan05/nifty50-mlops-portfolio](https://github.com/manasa-premnathan05/nifty50-mlops-portfolio)  
-**Interactive Dashboard:** [https://manasa-premnathan05-nifty50-mlops.streamlit.app](https://manasa-premnathan05-nifty50-mlops.streamlit.app)
+**Interactive Dashboard:** [https://manasa-premnathan05-nifty50-ads.streamlit.app](https://manasa-premnathan05-nifty50-ads.streamlit.app)

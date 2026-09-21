@@ -4,7 +4,7 @@
 **Author & Quantitative Developer:** Manasa Premnathan  
 **GitHub Profile:** [https://github.com/manasa-premnathan05](https://github.com/manasa-premnathan05)  
 **Public Repository:** [https://github.com/manasa-premnathan05/nifty50-mlops-portfolio](https://github.com/manasa-premnathan05/nifty50-mlops-portfolio)  
-**Interactive Streamlit Portal:** [https://manasa-premnathan05-nifty50-mlops.streamlit.app](https://manasa-premnathan05-nifty50-mlops.streamlit.app) *(or run locally via `streamlit run dashboard.py`)*  
+**Interactive Streamlit Portal:** [https://manasa-premnathan05-nifty50-ads.streamlit.app](https://manasa-premnathan05-nifty50-ads.streamlit.app) *(or run locally via `streamlit run dashboard.py`)*  
 
 ---
 
@@ -172,4 +172,4 @@ docker run -d -p 8000:8000 --name nifty50-api nifty50-predictor:v1
 5. Branch: `main`
 6. Main file path: `dashboard.py`
 7. Click **"Deploy!"**
-Your live dashboard will be accessible publicly at: `https://manasa-premnathan05-nifty50-mlops.streamlit.app`.
+Your live dashboard will be accessible publicly at: `https://manasa-premnathan05-nifty50-ads.streamlit.app`.
